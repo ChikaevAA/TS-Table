@@ -1,0 +1,11 @@
+.row {
+  position: relative;
+  flex: 0 1 auto;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.active {
+  background-color: #99c7ef;
+}

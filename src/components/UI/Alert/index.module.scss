@@ -1,0 +1,14 @@
+.alert {
+  position: relative;
+  padding: 1rem 1rem;
+  margin: 1rem 0;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  text-align: center;
+}
+
+.alert_danger {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}

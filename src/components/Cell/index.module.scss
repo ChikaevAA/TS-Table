@@ -1,0 +1,9 @@
+.cell {
+  flex: 1 0 0;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 60px;
+}
