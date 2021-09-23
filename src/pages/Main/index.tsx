@@ -15,7 +15,7 @@ const Main: React.FC = () => {
 
 	useEffect(() => {
 		initializeItems(items)
-	}, [initializeItems])
+	}, [])
 
 	return (
 		<div className={s.root}>
