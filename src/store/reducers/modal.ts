@@ -1,14 +1,14 @@
-import {ModalAction, ModalActionTypes, modalState} from "../../types/modal";
+import { ModalAction, ModalActionTypes, ModalState } from '../../types/modal';
 
-const initialState: modalState = {
-	modalState: false
-}
+const initialState: ModalState = {
+  modalState: false,
+};
 
 export const modalReducer = (state = initialState, action: ModalAction) => {
-	switch (action.type as string) {
-		case ModalActionTypes.TOGGLE_MODAL:
-			return {...state, modalState: !state.modalState}
-		default:
-			return state
-	}
-}
+  switch (action.type as string) {
+    case ModalActionTypes.TOGGLE_MODAL:
+      return { ...state, modalState: !state.modalState };
+    default:
+      return state;
+  }
+};

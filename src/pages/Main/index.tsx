@@ -1,30 +1,29 @@
-import React, {useEffect} from 'react';
-import {useActions} from "../../hooks/useActions";
+import React, { useEffect } from 'react';
+import { useActions } from '../../hooks/useActions';
 
-import s from "./index.module.scss"
+import s from './index.module.scss';
 
-import Table from "../../components/Table"
-import Form from "../../components/Form";
-import Modal from "../../components/Modal";
-import {headers} from "../../variables/headers";
-import {items} from "../../variables/items";
+import Table from '../../components/Table';
+import Form from '../../components/Form';
+import Modal from '../../components/Modal';
+import { headers } from '../../variables/headers';
+import { items } from '../../variables/items';
 
 const Main: React.FC = () => {
+  const { initializeItems } = useActions();
 
-	const {initializeItems} = useActions()
+  useEffect(() => {
+    initializeItems(items);
+  }, [initializeItems]);
 
-	useEffect(() => {
-		initializeItems(items)
-	}, [])
-
-	return (
-		<div className={s.root}>
-			<Table headers={headers}/>
-			<Modal>
-				<Form/>
-			</Modal>
-		</div>
-	);
+  return (
+    <div className={s.root}>
+      <Table headers={headers} />
+      <Modal>
+        <Form />
+      </Modal>
+    </div>
+  );
 };
 
 export default Main;

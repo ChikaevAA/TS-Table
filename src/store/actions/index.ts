@@ -1,7 +1,7 @@
-import * as TableActions from "../actions/table"
-import * as ModalActions from "../actions/modal"
+import * as TableActions from './table';
+import * as ModalActions from './modal';
 
 export const rootActions = {
-	...TableActions,
-	...ModalActions
-}
+  ...TableActions,
+  ...ModalActions,
+};
