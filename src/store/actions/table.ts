@@ -16,7 +16,7 @@ export const saveItems = (items: Item[]): SaveItemsAction => ({
 
 export const saveItemsControl = (items: Item[]) => (dispatch: Dispatch) => {
   const targetItems = getItems<Item[]>('items', items);
-  if (!isEqual(targetItems, items)) {
+  if (!isEqual<Item[]>(targetItems, items)) {
     dispatch(saveItems(items));
     localStorage.setItem('items', JSON.stringify(items));
     return;
