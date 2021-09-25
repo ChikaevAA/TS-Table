@@ -68,34 +68,41 @@ const Form: React.FC = () => {
     toggleModal();
   };
 
+  const formControls = (
+    <Controls align="center">
+      <Button styleType="success" buttonType="submit">
+        Добавить
+      </Button>
+      <Button styleType="danger" buttonType="reset">
+        Отменить
+      </Button>
+    </Controls>
+  );
+
+  const formContent = (
+    <Row>
+      <Cell>
+        <Input dataType={InputTypes.text} dataValue={item.name} onInputChange={e => handleInput(e)} />
+      </Cell>
+      <Cell>
+        <Input dataType={InputTypes.number} dataValue={item.temperature} onInputChange={e => handleInput(e)} />
+      </Cell>
+      <Cell>
+        <Input dataType={InputTypes.date} dataValue={item.discoveryDate} onInputChange={e => handleInput(e)} />
+      </Cell>
+      <Cell>
+        <Checkbox dataValue={item.visible} onCheckboxChange={e => handleInput(e)} />
+      </Cell>
+      <Cell>
+        <Select dataValue={item.sort} onSelectChange={e => handleSelect(e)} />
+      </Cell>
+    </Row>
+  );
+
   return (
     <form className={s.form} onSubmit={handleFormSubmit} onReset={toggleModal}>
-      <Row>
-        <Cell>
-          <Input dataType={InputTypes.text} dataValue={item.name} onInputChange={e => handleInput(e)} />
-        </Cell>
-        <Cell>
-          <Input dataType={InputTypes.number} dataValue={item.temperature} onInputChange={e => handleInput(e)} />
-        </Cell>
-        <Cell>
-          <Input dataType={InputTypes.date} dataValue={item.discoveryDate} onInputChange={e => handleInput(e)} />
-        </Cell>
-        <Cell>
-          <Checkbox dataValue={item.visible} onCheckboxChange={e => handleInput(e)} />
-        </Cell>
-        <Cell>
-          <Select dataValue={item.sort} onSelectChange={e => handleSelect(e)} />
-        </Cell>
-      </Row>
-
-      <Controls align="center">
-        <Button styleType="success" buttonType="submit">
-          Добавить
-        </Button>
-        <Button styleType="danger" buttonType="reset">
-          Отменить
-        </Button>
-      </Controls>
+      {formContent}
+      {formControls}
     </form>
   );
 };
